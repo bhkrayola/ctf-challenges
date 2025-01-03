@@ -1,0 +1,13 @@
+name: rockabye
+author: brian
+description: |-
+  Now she got a six-year-old,
+  tryin to keep him warm,
+  tryin to keep out the cold
+
+  Make sure to wrap your answer with flag{}, and use Raw-MD5 as the hashing type
+
+flag: flag{pikachu2} 
+
+provide:
+  - hash.txt

@@ -1,0 +1,8 @@
+name: zip2john
+author: brian
+description: |
+  Can you handle zip files? 
+
+flag: flag{wtm00_z1p_f1les}
+provide:
+  - chall_1.zip

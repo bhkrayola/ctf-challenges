@@ -1,0 +1,7 @@
+name: funny-business
+author: brian
+description: |-
+  this is not cool guys. stop asking me what "exif" is. i don't know either.
+flag: flag{b4bys_f1rst_ex1f}
+provide:
+  - huh.jpg

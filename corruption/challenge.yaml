@@ -1,0 +1,7 @@
+name: corruption
+author: brian
+description: |-
+  halp!!!!!!! my favorite garfield image wont open!!!!!!
+flag: flag{r/*\w*[aeiou]\w*$/}
+provide:
+  - broken_forever.png

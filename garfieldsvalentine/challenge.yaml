@@ -1,0 +1,23 @@
+name: garfields-valentine
+author: bhkrayola
+description: |-
+  garfield wouldnt tell me his valentines day plans... can you run ls to check for me?
+  
+  {{ link }}
+
+provide:
+  - server/app.py
+
+flag:
+  file: server/flag.txt
+
+containers:
+  main:
+    build: server
+    ports:
+      - 5000
+
+expose:
+  main:
+    - target: 5000
+      http: garfields-valentine

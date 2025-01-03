@@ -1,0 +1,11 @@
+name: wordlists
+author: bhkrayola
+description: |-
+  Can you crack Vrishaks super secret password? I heard it consists of an adjective, an animal, two digits, and is all lowercase.
+
+  Make sure to wrap your answer with flag{}, and use Raw-MD5 as the hashing type.
+
+flag: flag{sturdylion52} 
+
+provide:
+  - hash.txt
