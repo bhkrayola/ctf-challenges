@@ -1,0 +1,10 @@
+name: bandits-secret
+author: brian / diana
+description: |
+  OverTheWire offers many "wargames" to help you learn and practice security concepts. In particular, they host the [Bandit](https://overthewire.org/wargames/bandit/) game, which is used to teach the basics of Linux.
+
+  Your challenge is to complete the first 13 levels (including level 0) of the Bandit game. The password for bandit13 is the flag for this challenge. Submit your answer in the format `flag{password}`.
+
+  While guides and walkthroughs are available online, we encourage you to try to solve the challenges on your own. If you get stuck, you can ask for help in either the discord or to an officer!
+
+flag: flag{FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn}

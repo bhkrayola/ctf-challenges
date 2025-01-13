@@ -1,0 +1,9 @@
+name: stretchy
+author: brian
+description: |-
+  where did the flag go?
+
+flag: flag{yipeeeee_wahooooo}
+
+provide:
+  - flag.png

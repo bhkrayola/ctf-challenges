@@ -1,0 +1,25 @@
+name: garfield-fun
+author: bhkrayola
+description: |-
+  dont like blockchain? try some server side template injection.
+  
+  {{ link }}
+  
+value: 100
+
+provide:
+  - server/app.py
+
+flag:
+  file: server/flag.txt
+
+containers:
+  main:
+    build: server
+    ports:
+      - 5000
+
+expose:
+  main:
+    - target: 5000
+      http: garfield-fun

@@ -1,0 +1,6 @@
+p = 131071
+g = 17
+secret = 110106
+
+Find the exponent of g, x
+Flag format: flag{x}

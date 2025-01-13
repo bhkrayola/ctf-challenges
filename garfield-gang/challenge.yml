@@ -1,0 +1,43 @@
+name: garfield-gang
+author: brian
+description: |
+  if you're besties with garfield, he'll tell you his secret. Connect to the remote server using netcat.
+
+  hint: what is integer overflow? how many bits are in a signed short integer?
+
+  `{{ nc }}`
+
+flag:
+  file: flag.txt
+
+provide:
+  - ./chall.c
+  - ./chall
+
+containers:
+  main:
+    build: .
+    replicas: 1
+    ports:
+      - 5000
+    k8s:
+      container:
+        securityContext:
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+              - all
+            add:
+              - chown
+              - setuid
+              - setgid
+              - sys_admin
+              - mknod
+      metadata:
+        annotations:
+          container.apparmor.security.beta.kubernetes.io/main: unconfined
+
+expose:
+  main:
+    - target: 5000
+      tcp: 31533

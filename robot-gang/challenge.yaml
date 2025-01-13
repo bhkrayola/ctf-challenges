@@ -1,0 +1,22 @@
+name: robot-gang
+author: brian
+description: |
+  how do search engine crawlers (such as Google) know which URLs it can access on your site?
+
+  you may need to some research!!!!!!!!!!!!!!
+
+  {{ link }}
+
+flag:
+  file: server/robot-gang-hideout
+
+containers:
+  main:
+    build: server
+    ports:
+      - 80
+
+expose:
+  main:
+    - target: 80
+      http: robotgang

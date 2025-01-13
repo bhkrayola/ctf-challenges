@@ -1,0 +1,8 @@
+name: basic-dlp
+author: brian
+description: |-
+  warm up
+
+provide:
+  - numbers.txt
+flag: flag{12345}

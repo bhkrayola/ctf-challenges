@@ -1,0 +1,19 @@
+body{
+    background-image: url('/static/landingbackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    font-size: larger;
+    color: white;
+}
+
+p{
+    padding-top: 10px;
+}
+
+h1{
+    padding-top: 0px;
+}

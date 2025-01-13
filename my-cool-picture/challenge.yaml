@@ -1,0 +1,9 @@
+name: my-cool-picture
+author: brian
+description: |-
+  Have you heard of EXIF data? Wrap the flag with the location of the image as shown: flag{country} 
+
+flag: flag{Taiwan}
+
+provide:
+  - mycoolpicture.jpg

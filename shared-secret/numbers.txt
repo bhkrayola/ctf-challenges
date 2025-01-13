@@ -1,0 +1,9 @@
+p: 205323190663558785531307401512184564911
+g: 5
+
+person 1: garfield
+person 2: lasagna
+
+s = shared secret
+
+flag{s}

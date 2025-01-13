@@ -1,0 +1,8 @@
+name: bashfuscate
+author: brian
+description: |
+  haha, you'll never know the contents of my super epic bash script. 
+flag:
+  file: flag.txt
+provide:
+  - mysuperepicscript.sh

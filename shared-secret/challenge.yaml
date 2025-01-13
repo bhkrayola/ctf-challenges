@@ -1,0 +1,8 @@
+name: shared-secret
+author: brian
+description: |-
+  compute the shared secret
+
+provide:
+  - numbers.txt
+flag: flag{192564257870861479515718746176656618144}
