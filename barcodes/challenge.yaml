@@ -1,0 +1,14 @@
+name: barcodes
+author: brian
+description: |-
+  I found these four barcodes, but they seem like gibberish. Can you help me figure out what Dr. Doofenshmirtz was trying to send? -
+
+flag: flag{h1ko_1nhuman_react10ns}
+
+provide:
+  - barcode.png
+  - barcode2.png
+  - barcode3.png
+  - barcode4.png
+
+value: 15

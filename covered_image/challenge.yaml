@@ -1,0 +1,11 @@
+name: covered-image
+author: brian
+description: |-
+    I found this flag, but it seems to be covered up. Can you help me find the flag? 
+
+flag: flag{carried_away_by_a_moonlight_shadow}
+
+provide:
+    - secretflag.jpg
+
+value: 6
