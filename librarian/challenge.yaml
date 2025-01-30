@@ -1,0 +1,6 @@
+name: librarian
+author: brian
+description: |
+ i heard this site is the key to infinite knowledge... can you use your epic hacking skills to login [here](https://sql-injection-game.sites.tjhsst.edu) for me?
+flag:
+  file: flag.txt

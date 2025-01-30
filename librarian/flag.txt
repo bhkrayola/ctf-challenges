@@ -1,0 +1,1 @@
+winterctf{knowledge.is.power}
