@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garfield Madlib CTF</title>
+  <link rel="stylesheet" href="../static/style2.css" />
+</head>
+<body>
+  <h1>Your Garfield Lasagna Monday Madlib</h1>
+
+  <p>
+    Once upon a time, in a {{ w1 }} land, Garfield and his trusty {{ w2 }}<br />
+    set out to {{ w3 }} on a(n) {{ w4 }} adventure. Garfield was feeling {{ w5 }}<br />
+    about the prospect of finding a treasure trove of {{ w6 }}!<br /><br />
+
+    They {{ w7 }} to the secret location, and to their amazement, they found a {{ w8 }}<br />
+    chest filled with {{ w9 }}. Garfield couldn't resist {{ w10 }} into the delicious treat!<br /><br />
+
+    Filled with {{ w11 }}, Garfield decided to {{ w12 }} all the way back home with the treasure chest.<br />
+    He proudly displayed it in his {{ w13 }} and invited all his {{ w14 }} friends to join the celebration.<br />
+    They {{ w15 }} and danced around the chest, having a fantastic {{ w16 }}.
+
+
+  <div
+    id="flag-container"
+    style="display: none; margin-top: 2em; border: 2px solid lime; padding: 1em;"
+  >
+    <h2 style="color: lime;">Congratulations! Here’s your flag:</h2>
+    <pre id="flag" style="font-size: 1.2em; font-weight: bold;"></pre>
+  </div>
+
+  <script>
+    const w1 = "{{ w1 }}",
+          w2 = "{{ w2 }}",
+          w3 = "{{ w3 }}",
+          w4 = "{{ w4 }}",
+          w5 = "{{ w5 }}";
+  
+    const checkInput = `${w1}|${w2}|${w3}|${w4}|${w5}`;
+  
+    fetch("/static/challenge.wasm")
+      .then(resp => resp.arrayBuffer())
+      .then(bytes => WebAssembly.instantiate(bytes, {}))
+      .then(results => {
+        const exports = results.instance.exports;
+        const memory  = exports.memory;
+
+        const ptr = 1024;
+  
+        const encoder    = new TextEncoder();
+        const inputBytes = encoder.encode(checkInput);
+
+        const u8 = new Uint8Array(memory.buffer);
+  
+        if (memory.buffer.byteLength < ptr + inputBytes.length + 1) {
+          console.error(
+            `Cannot write ${inputBytes.length + 1} bytes at offset ${ptr}. ` +
+            `Memory is only ${memory.buffer.byteLength} bytes long!`
+          );
+          return;
+        }
+  
+        u8.set(inputBytes, ptr);
+        u8[ptr + inputBytes.length] = 0;
+  
+        if (exports.check(ptr) === 1) {
+          const flagPtr = exports.get_flag();
+  
+          let out = "";
+          let i   = flagPtr; // should be 0
+          while (u8[i] !== 0) {
+            out += String.fromCharCode(u8[i]);
+            i++;
+          }
+  
+          document.getElementById("flag").innerText = out;
+          document.getElementById("flag-container").style.display = "block";
+        }
+      })
+      .catch(err => console.error("Failed to load/instantiate challenge.wasm:", err));
+  </script>
+  
+  
+  
+</body>
+</html>

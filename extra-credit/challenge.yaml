@@ -1,0 +1,40 @@
+name: extra-credit
+author: bhkrayola
+description: |
+  Agent P, could you please take a look at our internal grading system? I really don't want to get rescinded...
+  `{{ nc }}`
+
+flag:
+  file: flag.txt
+
+provide:
+  - ./gradeViewer.c
+  - ./gradeViewer
+
+containers:
+  main:
+    build: .
+    replicas: 1
+    ports:
+      - 5000
+    k8s:
+      container:
+        securityContext:
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+              - all
+            add:
+              - chown
+              - setuid
+              - setgid
+              - sys_admin
+              - mknod
+      metadata:
+        annotations:
+          container.apparmor.security.beta.kubernetes.io/main: unconfined
+
+expose:
+  main:
+    - target: 5000
+      tcp: 31624

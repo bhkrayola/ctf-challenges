@@ -1,0 +1,19 @@
+name: garfield-lasagna-monday
+author: bhkrayola
+description: |-
+  garfield will give you the flag if you can figure out his favorite few words to start a madlib.
+
+  {{ link }}
+flag:
+  file: flag.txt
+
+containers:
+  main:
+    build: server
+    ports:
+      - 5000
+
+expose:
+  main:
+    - target: 5000
+      http: garfield-lasagna-monday
