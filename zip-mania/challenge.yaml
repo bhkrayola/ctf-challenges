@@ -1,0 +1,11 @@
+name: zip-mania
+author: brian
+description: |
+  ono, this flag is in here but so many zippers and so many layers :(
+  
+  you'll need to write a bit of code to solve this one. it can be in any language, but did you know that you can [write a script in bash](https://www.cyberciti.biz/faq/bash-for-loop/)?
+  
+flag:
+  file: flag.txt
+provide:
+  - flag.txt.zip
